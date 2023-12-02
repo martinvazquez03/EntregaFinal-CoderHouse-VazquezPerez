@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Cliente</h1>
-</body>
-</html>
+{% extends 'MainM/base.html' %}
+
+{% block contenido_titulo %}
+    Cliente
+{% endblock contenido_titulo %}
+
+{% block contenido %}
+    <ul>
+        <li><a href="{% url 'MainM:MainM' %}">Ir a MainM</a></li>
+        <li><a href="{% url 'Producto:Producto' %}">Ir a Producto</a></li>
+    </ul>
+{% endblock contenido %}
