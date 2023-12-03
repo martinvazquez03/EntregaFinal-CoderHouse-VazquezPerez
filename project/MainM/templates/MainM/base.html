@@ -7,12 +7,15 @@
 </head>
 <body>
     <h1 style="color: red;">
-    {% block contenido_titulo %}
-        
-    {% endblock contenido_titulo %}
+        {% block contenido_titulo %}
+        {% endblock contenido_titulo %}
     </h1>
     {% block contenido %}
         
     {% endblock contenido %}
+
+    {% block footer %}
+        <p>Hecho en 2023</p>
+    {% endblock footer %}
 </body>
 </html>
