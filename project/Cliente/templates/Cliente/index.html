@@ -1,12 +1,20 @@
 {% extends 'MainM/base.html' %}
 
 {% block contenido_titulo %}
-    Integrantes
+    Registrarse/Iniciar sesión
 {% endblock contenido_titulo %}
 
+
 {% block contenido %}
-    <ul>
-        <li><a href="{% url 'MainM:MainM' %}">Ir a Blog Home</a></li>
-        <li><a href="{% url 'Producto:Producto' %}">Ir a Videos</a></li>
-    </ul>
+    Si todavia no tenés perfil en el blog, registrate! Si ya tenés un perfil iniciá sesion y comentá algo!
+    <div></div>
+    <a class="btn btn-primary" href="{% url 'Cliente:crear_usuarios' %}">Registrate</a>
+    <div></div>
+    <h3>Miembros de la comunidad</h3>
+    <div></div>
+    {% for persona in Usuarios %}
+        <li>
+            {{persona}}
+        </li>
+    {% endfor %}
 {% endblock contenido %}

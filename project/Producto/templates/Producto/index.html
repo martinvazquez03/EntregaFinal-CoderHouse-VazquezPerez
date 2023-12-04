@@ -5,8 +5,11 @@
 {% endblock contenido_titulo %}
 
 {% block contenido %}
-    <ul>
-        <li><a href="{% url 'MainM:MainM' %}">Ir a Blog Home</a></li>
-        <li><a href="{% url 'Cliente:Cliente' %}">Ir a Integrantes</a></li>
-    </ul>
+    Acá compartimos con ustedes nuestras aventuras!
+    <div class="row gx-4 gx-lg-5">
+
+        {% include 'MainM/tarjeta.html' %}
+        {% include 'MainM/tarjeta.html' %}
+
+    </div> 
 {% endblock contenido %}

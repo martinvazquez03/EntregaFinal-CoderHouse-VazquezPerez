@@ -5,4 +5,5 @@ app_name = "MainM"
 
 urlpatterns = [
     path("", views.view_mainmenu, name = "MainM"),
+    path("Redes/", views.view_about, name = "Redes"),
 ]
