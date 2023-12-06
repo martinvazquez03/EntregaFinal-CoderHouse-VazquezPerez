@@ -9,8 +9,10 @@
     <form method="post">
         {% csrf_token %}
         {{ form_comentario.as_p }}
-        <button type="submit">Comentar</button>
+        <p><button type="submit">Comentar</button></p>
     </form>
 
+    
+    <p><a class="btn btn-primary" href="{% url 'Producto:Producto' %}">Volver a videos</a></p>
     
 {% endblock contenido %}

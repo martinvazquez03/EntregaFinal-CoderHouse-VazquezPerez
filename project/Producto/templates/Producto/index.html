@@ -8,11 +8,14 @@
     Acá compartimos con ustedes nuestras aventuras!
     <div class="row gx-4 gx-lg-5">
 
-        {% include 'MainM/tarjeta.html' %}
-        {% include 'MainM/tarjeta.html' %}
+        {% include 'Producto/tarjeta_videos.html' %}
+        
+    </div>
 
-    </div> 
-
+        <p><a class="btn btn-primary" href="{% url 'Producto:comentar' %}">Comentar</a></p>
+        <div></div>
+        <p><a class="btn btn-primary" href="{% url 'Producto:comentarios' %}">Ver comentarios</a></p>
+        <div></div> 
 
 {% endblock contenido %}
 
