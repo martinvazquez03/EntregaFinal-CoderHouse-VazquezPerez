@@ -1,0 +1,16 @@
+{% extends 'Producto/index.html' %}
+
+{% block contenido_titulo %}
+    Comentá!
+{% endblock contenido_titulo %}
+
+{% block contenido %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form_comentario.as_p }}
+        <button type="submit">Comentar</button>
+    </form>
+
+    
+{% endblock contenido %}

@@ -1,0 +1,18 @@
+{% extends 'Producto/index.html' %}
+
+{% block contenido_titulo %}
+    Ver Comentarios
+{% endblock contenido_titulo %}
+
+{% block contenido %}
+    {% for persona in Autor %}
+
+        <h4>{{persona.autor}}</h4>
+        <p>{{persona.comentario}}</p>
+    
+    {% endfor %}
+
+{% endblock contenido %}
+
+    
+
