@@ -6,15 +6,18 @@
 
 
 {% block contenido %}
-    Si todavia no tenés perfil en el blog, registrate! Si ya tenés un perfil iniciá sesion y comentá algo!
+    <p>Si todavia no tenés perfil en el blog, registrate y comentá algo!</p>
     <div></div>
     <a class="btn btn-primary" href="{% url 'Cliente:crear_usuarios' %}">Registrate</a>
     <div></div>
-    <h3>Miembros de la comunidad</h3>
+    <p><h3>Miembros de la comunidad</h3></p>
     <div></div>
+    <p><a class="btn btn-primary" href="{% url 'Cliente:usuario_buscado' %}">Filtro</a></p>
     {% for persona in Usuarios %}
         <li>
             {{persona}}
+            <div></div>
+            <p>Usuario: {{persona.usuario}}</p>
         </li>
     {% endfor %}
 {% endblock contenido %}

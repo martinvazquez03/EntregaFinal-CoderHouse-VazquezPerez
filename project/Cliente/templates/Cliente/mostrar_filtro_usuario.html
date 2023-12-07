@@ -1,0 +1,20 @@
+{% extends 'Cliente/index.html' %}
+
+{% block contenido_titulo %}
+    Filtro Usuario
+{% endblock contenido_titulo %}
+
+{% block contenido %}
+
+    {% for persona in Filtro %}
+
+        <p>{{persona}}</p>
+
+    {% endfor %}  
+
+    <p><a class="btn btn-primary" href="{% url 'Cliente:Cliente' %}">Volver a miembros</a></p>
+
+{% endblock contenido %}
+
+
+

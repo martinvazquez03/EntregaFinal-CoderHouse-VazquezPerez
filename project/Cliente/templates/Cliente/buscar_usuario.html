@@ -1,0 +1,18 @@
+{% extends 'Cliente/index.html' %}
+
+{% block contenido_titulo %}
+    Busqueda de usuario
+{% endblock contenido_titulo %}
+
+{% block contenido %}
+    <p><form method="post">
+
+        {% csrf_token %}
+        {{ Form.as_p }}
+        <button type="submit">Filtrar</button>
+
+    </form></p>
+{% endblock contenido %}
+
+    
+

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from . import models
-from datetime import date
+from . import forms
 # Create your views here.
 
 def view_Cliente(request):
@@ -9,21 +9,6 @@ def view_Cliente(request):
     context = {"Usuarios" : usuario}
     return render(request, "Cliente/index.html", context)
 
-
-def filtrar(request):
-    usuario_nombre = models.Usuario.objects.filter(nombre__contains = "J")
-    
-    usuario_nacimiento = models.Usuario.objects.filter(fecha_nacimiento__gt = date(2004,1,1))
-    
-    usuario_pais_origen = models.Usuario.objects.filter(pais_origen = None)
-    
-    context = {"Usuario_nombre":usuario_nombre,
-               "Usuario_nacimiento": usuario_nacimiento,
-               "Usuario_pais_origen": usuario_pais_origen}
-    return render(request, "Cliente/filtrar.html", context)
-
-
-from . import forms
 
 def Formulario_usuarios(request):
     if request.method == "POST":
@@ -34,3 +19,23 @@ def Formulario_usuarios(request):
     else:
         form = forms.Usuario_form()
     return render(request, "Cliente/crear_usuario.html", {"form": form})
+
+
+def view_usuario_buscado(request):
+    if request.method == "GET":
+        form_filtro = forms.Buscar_Usuario_Form()
+        context = {"Form" : form_filtro}
+        return render(request, "Cliente/buscar_usuario.html", context)
+    else:
+        format = forms.Buscar_Usuario_Form(request.POST)
+        if format.is_valid():
+            info = format.cleaned_data
+            filtro_usuarios = []
+            for usuario in models.Usuario.objects.filter(usuario=info["usuario"]):
+                filtro_usuarios.append(usuario)
+            contexto_filtro = {"Filtro": filtro_usuarios}
+            return render(request, "Cliente/mostrar_filtro_usuario.html", contexto_filtro)
+    
+    
+
+    
