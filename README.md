@@ -1,9 +1,10 @@
 # Tercera_Pre_Entrega_CoderHouse_MartinVazquezPerez
 
+#LINK AL VIDEO MOSTRANDO EL FUNCIONAMIENTO DE LA PAGINA: https://youtu.be/drq6rEQHTTg
 
 # Este proyecto me gustaria usarlo como base para el proyecto final y ademas usarlo con mis amigos una vez termine el curso
 
-# Se trata de un blog con informacion sobre nuestro grupo de amigos, llamado Put*Tube. En el mismo se incluyen videos, comentarios, creacion de usuarios, una seccion para conocer a la comunidad y ademas un link hacia la unica red social que manejamos (por el momento).
+# Se trata de un blog con informacion sobre nuestro grupo de amigos, llamado Sie7e-600. En el mismo se incluyen videos, comentarios, creacion de usuarios, una seccion para conocer a la comunidad y ademas un link hacia la unica red social que manejamos (por el momento).
 
 # En cuanto a la funcionalidad de cada archivo views.py:
 
