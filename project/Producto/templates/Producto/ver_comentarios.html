@@ -1,20 +1,37 @@
-{% extends 'Producto/index.html' %}
 
-{% block contenido_titulo %}
-    Ver Comentarios
-{% endblock contenido_titulo %}
 
 {% block contenido %}
-    {% for persona in Autor %}
+<style>
+    body {
+        background-color: #000;
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+    }
 
-        <h4>{{persona.autor}}</h4>
-        <p>{{persona.comentario}}</p>
-    
-    {% endfor %}
+    h1 {
+        color: #f5f7f8;
+    }
 
-    <p><a class="btn btn-primary" href="{% url 'Producto:Producto' %}">Volver a videos</a></p>
-    <div></div>
-    <p><a class="btn btn-primary" href="{% url 'Producto:comentar' %}">Volver a comentar</a></p>
+    h4 {
+        color: #f6f8f9;
+        margin-bottom: 5px;
+    }
+
+    p {
+        color: #fff;
+        margin-bottom: 15px;
+    }
+</style>
+</head>
+<body>
+
+{% for persona in Autor %}
+    <h4>{{ persona.autor }}</h4>
+    <p>{{ persona.comentario }}</p>
+{% endfor %}
+
+</body>
+</html>
 {% endblock contenido %}
 
     

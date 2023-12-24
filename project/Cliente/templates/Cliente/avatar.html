@@ -1,0 +1,68 @@
+{% extends 'Cliente/index.html' %}
+
+{% block contenido_titulo %}
+    Crear Avatar
+{% endblock contenido_titulo %}
+
+
+{% block contenido %}
+<style>
+    body {
+        background-color: #fbf7f7;
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+    }
+
+    h1 {
+        color: #f9fafb;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #252525;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.328);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #f5f5f6;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        background-color: #444;
+        border: 1px solid #3498db;
+        border-radius: 4px;
+        color: #fff;
+    }
+
+    button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #258cd1;
+    }
+</style>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+
+</body></p>
+{% endblock contenido %}

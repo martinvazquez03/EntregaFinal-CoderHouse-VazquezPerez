@@ -1,21 +1,126 @@
 {% extends 'MainM/base.html' %}
 
+<style>
+    .card {
+        background-color: rgb(42, 40, 40);
+        color: #fff;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .video-container {
+        position: relative;
+        overflow: hidden;
+        padding-top: 56.25%; /* Aspect ratio 16:9 */
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Para que las tarjetas estén alineadas horizontalmente en pantallas más grandes */
+    @media (min-width: 768px) {
+        .card {
+            margin-bottom: 0;
+        }
+    }
+</style>
+
 {% block contenido_titulo %}
     Videos
 {% endblock contenido_titulo %}
 
 {% block contenido %}
-    Acá compartimos con ustedes nuestras aventuras!
-    <div class="row gx-4 gx-lg-5">
+    <h5>Acá compartimos con ustedes nuestras aventuras!</h5>
 
-        {% include 'Producto/tarjeta_videos.html' %}
-        
-    </div>
+    <style>
+        .video-container {
+            background-color: rgb(42, 40, 40);
+            padding: 10px; 
+            border-radius: 20px; 
+            margin-bottom: 20px;
+            max-width: 300px; 
+            margin: auto;
+            text-align: center;
+            align-items: center; 
+        }
+    
+        .comentario-container {
+            background-color: rgb(42, 40, 40);
+            padding: 10px; 
+            border-radius: 20px; 
+            margin-bottom: 20px;
+            max-width: 300px; 
+            margin: auto;
+            text-align: left; 
+        }
+    
+        .comentario {
+            color: #fff; 
+        }
 
-        <p><a class="btn btn-primary" href="{% url 'Producto:comentar' %}">Comentar</a></p>
+        .contenedor-principal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; 
+    }
+
+    .eliminar-btn {
+        background-color: #FF5733;
+        color: white;
+        padding: 8px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .editar-btn {
+        background-color: #3498db;
+        color: white;
+        padding: 8px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    </style>
+    
+    {% for vid in videos %}
+        <div class="video-container">
+            <h4>{{ vid.titulo }}</h4>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card-body">
+                        <div class="video-container">
+                            <video src="{{ vid.video.url }}" type="video/mp4" controls allowfullscreen="" frameborder="0" style="width: 450%;"></video>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Mostrar comentarios para el video actual -->
+                {% for comentario in vid.comentario_set.all %}
+                    <div class="comentario-container">
+                        <p class="comentario">{{ comentario.autor }}: {{ comentario.texto }}</p>
+                    <button class="eliminar-btn">
+                        <a href="{% url 'Cliente:borrarcomentario' comentario.id %}" style="color: white;">Eliminar</a>
+                    </button>
+                    <button class="editar-btn">
+                        <a href="{% url 'Cliente:eleccioncomentario' comentario.id %}" style="color: white;">Editar</a>
+                    </button>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+        <p><a class="btn btn-primary" style="background-color: #3498db;" href="{% url 'Producto:comentar' %}">Comentar</a></p>
         <div></div>
-        <p><a class="btn btn-primary" href="{% url 'Producto:comentarios' %}">Ver comentarios</a></p>
-        <div></div> 
+
 
 {% endblock contenido %}
 

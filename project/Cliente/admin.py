@@ -1,5 +1,6 @@
 from django.contrib import admin
 from . import models
 # Register your models here.
-admin.site.register(models.Pais)
-admin.site.register(models.Usuario)
+admin.site.register(models.Avatar)
+admin.site.register(models.Videos)
+admin.site.register(models.Comentario)

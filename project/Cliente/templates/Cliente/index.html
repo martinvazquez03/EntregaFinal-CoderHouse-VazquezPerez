@@ -1,5 +1,6 @@
 {% extends 'MainM/base.html' %}
 
+
 {% block contenido_titulo %}
     Registrarse/Iniciar sesión
 {% endblock contenido_titulo %}
@@ -8,16 +9,17 @@
 {% block contenido %}
     <p>Si todavia no tenés perfil en el blog, registrate y comentá algo!</p>
     <div></div>
-    <a class="btn btn-primary" href="{% url 'Cliente:crear_usuarios' %}">Registrate</a>
+    <p><a class="btn btn-primary" style="background-color: #3498db;" href="{% url 'Cliente:crear_usuarios' %}">Registrate</a></p>
     <div></div>
     <p><h3>Miembros de la comunidad</h3></p>
     <div></div>
-    <p><a class="btn btn-primary" href="{% url 'Cliente:usuario_buscado' %}">Filtro</a></p>
+    <p><a class="btn btn-primary" style="background-color: #3498db;" href="{% url 'Cliente:usuario_buscado' %}">Filtro</a></p>
     {% for persona in Usuarios %}
-        <li>
-            {{persona}}
             <div></div>
-            <p>Usuario: {{persona.usuario}}</p>
-        </li>
+            {% if persona.username == "admin" %}
+            {% else %}
+                <p>Usuario: {{persona.username}}</p>
+            {% endif %}
+            
     {% endfor %}
 {% endblock contenido %}

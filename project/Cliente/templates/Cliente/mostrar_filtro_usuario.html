@@ -1,18 +1,61 @@
 {% extends 'Cliente/index.html' %}
 
 {% block contenido_titulo %}
-    Filtro Usuario
+    Filtro Usuario + Vista detallada
 {% endblock contenido_titulo %}
 
 {% block contenido %}
 
+<style>
+    body {
+        background-color: #000;
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+    }
+
+    h1 {
+        color: #f7f9fb;
+    }
+
+    .user-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .user-item {
+        background-color: #333;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+    }
+
+    .btn-back {
+        background-color: #3498db;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .btn-back:hover {
+        background-color: #258cd1;
+    }
+</style>
+</head>
+<body>
+
+<ul class="user-list">
     {% for persona in Filtro %}
+        <li class="user-item">Nombre: {{ persona.first_name }} || Apellido: {{ persona.last_name}} || Usuario: {{persona.username}} || Email: {{persona.email}}</li>
+    {% endfor %}
+</ul>
 
-        <p>{{persona}}</p>
+<a class="btn btn-back" href="{% url 'Cliente:Cliente' %}">Volver</a>
 
-    {% endfor %}  
-
-    <p><a class="btn btn-primary" href="{% url 'Cliente:Cliente' %}">Volver a miembros</a></p>
+</body>
+</html>
 
 {% endblock contenido %}
 

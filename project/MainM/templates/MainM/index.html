@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block contenido_titulo %}
+    <p></p>
     Blog Home
 {% endblock contenido_titulo %}
 
@@ -10,21 +11,20 @@
     
     <!-- Heading Row-->
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
-        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'MainM/img/PTB.webp' %}" alt="..." /></div>
+        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'MainM/img/PTB.webp' %}"/></div>
         <div class="col-lg-5">
             <h1 class="font-weight-light">PTB</h1>
-            <p>La abreviatura del nombre del grupo, somos 20 tipos haciendo pavadas, surfeando y disfrutando en Mar del Plata. Vas a ver desde videos de surfing hasta fiestas, clips de cada uno de los pibes y mas delirios que se nos crucen por la cabeza cualquier dia de la semana.</p>
-            <a class="btn btn-primary" href="{% url 'Producto:Producto' %}">Al aguaaa</a>
+            <p>La abreviatura del nombre del grupo original, por mas que ahora seamos sie7e 600, la esencia nunca cambia, solo la seriedad en la que hacemos contenido. Somos 20 tipos haciendo pavadas, surfeando y disfrutando en Mar del Plata. Vas a ver desde videos de surfing hasta fiestas, clips de cada uno de los pibes y mas delirios que se nos crucen por la cabeza cualquier dia de la semana.</p>
         </div>
     </div>
     <!-- Call to Action-->
-    <div class="card text-white bg-secondary my-5 py-4 text-center">
-        <div class="card-body"><p class="text-white m-0"><h1>NOVEDADES!!!</h1></p></div>
+    <div class="card text-black bg-dark my-2 py-1 text-center">
+        <div class="card-body" style="color: black;"><p class="text-white m-0"><h1>ALGUNAS NOVEDADES!!!</h1></p></div>
     </div>
     <!-- Content Row-->
     <div class="row gx-4 gx-lg-5">
 
-        {% include 'MainM/tarjeta.html' with titulo="Put*Tube project" cuerpo="Coming soon..." %}
+        {% include 'MainM/tarjeta.html' with titulo="sie7e 600 project" cuerpo="Coming soon..." %}
 
     </div>
     

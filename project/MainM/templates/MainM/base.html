@@ -7,6 +7,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <style>
+            body {
+                background-image: url("{% static 'MainM/img/sie7e_600.webp' %}");
+            }
+
+            h1,h2,h3,h4,h5,h6,p {
+                color: white;
+                text-shadow: 2px 2px 4px #000;
+                margin-bottom: 10px;
+            }
+        </style>
         <title>Put*Tube Life</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'MainM/assets/favicon.ico' %}"/>
@@ -15,7 +26,7 @@
     </head>
     <body>
 
-        {% include 'MainM/navbar.html' %}
+        {% include 'Cliente/navbar.html' %}
         <!-- Page Content-->
         <div class="container px-4 px-lg-5">
 
@@ -31,7 +42,7 @@
                 
             {% endblock contenido2 %}
         <!-- Footer-->
-            {% include 'MainM/footer.html' %}
+        {% include 'MainM/footer.html' %}    
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

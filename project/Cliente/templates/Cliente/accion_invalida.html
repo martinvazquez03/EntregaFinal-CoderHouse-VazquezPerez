@@ -1,0 +1,8 @@
+{% extends 'Producto/index.html' %}
+
+{% block contenido %}
+    <h2>{{mensaje}}</h2>
+    <div>
+        <p><a class="btn btn-primary" style="background-color: #3498db;" href="{% url 'Producto:Producto' %}">Volver a videos</a></p>
+    </div>
+{% endblock contenido %}

@@ -1,9 +1,14 @@
 <div class="col-md-4 mb-5">
     <div class="card h-100">
-        <div class="card-body">
+        <style>
+            .card {
+                background-color: rgb(32, 34, 37);
+            }
+        </style>
+        <div class="card-body" style="color: rgb(42, 40, 40);">
             <h2 class="card-title">{{titulo}}</h2>
             <p class="card-text">{{cuerpo}}</p>
         </div>
-        <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'MainM:Redes' %}">Mas info en nuestras redes!</a></div>
+        <div class="card-footer"><a class="btn btn-primary btn-sm" style="background-color:#3498db;" href="{% url 'MainM:Redes' %}">Mas info en nuestras redes!</a></div>
     </div>
 </div>

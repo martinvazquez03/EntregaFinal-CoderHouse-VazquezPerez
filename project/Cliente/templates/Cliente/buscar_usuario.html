@@ -4,14 +4,75 @@
     Busqueda de usuario
 {% endblock contenido_titulo %}
 
+
+
+
+
+
+
 {% block contenido %}
-    <p><form method="post">
+<style>
+    body {
+        background-color: #000;
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+    }
 
-        {% csrf_token %}
-        {{ Form.as_p }}
-        <button type="submit">Filtrar</button>
+    h1 {
+        color: #f9fbfc;
+    }
 
-    </form></p>
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #fbfcfc;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        background-color: #444;
+        border: 1px solid #3498db;
+        border-radius: 4px;
+        color: #fff;
+    }
+
+    button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #258cd1;
+    }
+</style>
+</head>
+<body>
+
+<form method="post">
+    {% csrf_token %}
+    {{ Form.as_p }}
+    <button type="submit">Filtrar</button>
+</form>
+
+</body>
+</html>
 {% endblock contenido %}
 
     
