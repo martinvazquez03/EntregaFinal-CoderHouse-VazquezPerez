@@ -131,7 +131,7 @@ def eliminar_comentario(request, id):
         response = {"mensaje":"No tienes permiso para realizar esta accion (403)"}
         return render(request,"Cliente/accion_invalida.html" ,response)
     else:
-        comentario_a_eliminar = models.Comentario.objects.filter(autor=request.user).first()
+        comentario_a_eliminar = models.Comentario.objects.filter(autor=request.user,id=id)
         comentario_a_eliminar.delete()
         return redirect("Producto:Producto")
     

@@ -24,10 +24,10 @@ class UserEditionFormulario(UserChangeForm):
     password2 = forms.CharField(label="Repetir contraseña", widget=forms.PasswordInput)
     nombre = forms.CharField(label="Nombre")
     apellido = forms.CharField(label="Apellido")
-
     class Meta:
         model = UserModel
         fields = ["email", "password1", "password2", "nombre", "apellido",]
+        exclude = ["contraseña"]
 
         
 class UserAvatarFormulario(forms.ModelForm):
@@ -37,12 +37,14 @@ class UserAvatarFormulario(forms.ModelForm):
         fields = ["imagen"]
         
         
-        
 class Comentarform(forms.ModelForm):
-    
     class Meta:
         model = models.Comentario
-        fields = ["autor","texto","post"]
+        fields = ["texto","post"]
+        
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        return super(Comentarform, self).form_valid(form)
         
         
 class Editarcomentarioform(forms.ModelForm):

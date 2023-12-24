@@ -1,11 +1,13 @@
 {% extends 'Producto/index.html' %}
 
+
+
+
 {% block contenido_titulo %}
-    Comentá!
+    Comentá! (solo posible si tienes un usuario creado)
 {% endblock contenido_titulo %}
 
 {% block contenido %}
-
 <style>
     body {
         background-color: #000;
@@ -72,6 +74,7 @@
 </style>
 </head>
 <body>
+{% if user.is_authenticated %}
 
 <form method="post">
     {% csrf_token %}
@@ -82,6 +85,7 @@
 <a class="btn btn-back" href="{% url 'Producto:Producto' %}">Volver a videos</a>
 
 </body>
-</html>
-    
+{% else %}
+    <p><a class="btn btn-back" href="{% url 'Cliente:login' %}">Primero hacé login</a></p>
+{% endif %}
 {% endblock contenido %}
